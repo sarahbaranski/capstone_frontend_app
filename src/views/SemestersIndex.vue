@@ -6,6 +6,9 @@
       <p>Start Date: {{ semester.start_date }}</p>
       <p>End Date: {{ semester.end_date }}</p>
       <router-link v-bind:to="`/semesters/${semester.id}`">Submit Availability</router-link>
+      <div>
+        <router-link v-bind:to="`/shifts`">Requested Shifts</router-link>
+      </div>
     </div>
   </div>
 </template>
