@@ -3,8 +3,8 @@
     <h1>All Students Availability</h1>
     <div v-for="shift in shifts" v-bind:key="shift.id">
       <h2>{{ shift.student_id }}</h2>
-      <p>Day: {{ shift.student_id.day }}</p>
-      <p>Time: {{ shift.id.time }}</p>
+      <p>Day: {{ shift.day }}</p>
+      <p>Time: {{ shift.time }}</p>
     </div>
   </div>
 </template>
@@ -14,7 +14,7 @@ import axios from "axios";
 export default {
   data: function() {
     return {
-      student_id: "",
+      student_id: this.student_id,
       shifts: [],
     };
   },
