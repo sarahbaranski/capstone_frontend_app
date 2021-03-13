@@ -12,6 +12,8 @@
       <router-link to="/logout">Logout</router-link>
       |
       <router-link to="/semesters">All Semesters</router-link>
+      |
+      <router-link to="/shifts">Submitted Availability</router-link>
     </div>
     <router-view />
   </div>

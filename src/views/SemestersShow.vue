@@ -110,6 +110,7 @@ export default {
   methods: {
     createShift: function() {
       var params = {
+        // semester: this.semester.id,
         day: this.newday,
         MorningTime: this.newMorningTime,
         AfternoonTime: this.newAfternoonTime,
