@@ -5,7 +5,7 @@
       <h2>{{ semester.name }}</h2>
       <p>Start Date: {{ semester.start_date }}</p>
       <p>End Date: {{ semester.end_date }}</p>
-      <router-link v-bind:to="`/semesters/${semester.id}`">Submit Availability</router-link>
+      <router-link v-bind:to="`/semesters/${semester.id}/shifts/new`">Submit Availability</router-link>
       <div>
         <router-link v-bind:to="`/shifts`">Requested Shifts</router-link>
       </div>
