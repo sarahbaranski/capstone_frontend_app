@@ -1,7 +1,25 @@
 <template>
   <div class="semesters-show">
     <h2>{{ semester.name }}</h2>
-    <p>shifts: {{ semester.shift_by_times }}</p>
+    <div v-for="slot in semester.shift_by_times" v-bind:key="slot.day + slot.time">
+      <table>
+        <tr>
+          <h3>
+            <th>{{ slot.day }} {{ slot.time }}</th>
+          </h3>
+        </tr>
+        {{ slot.students.length }} requested / {{ slot.total_required_staff }} required /
+        {{ slot.students.filter(s => s.scheduled).length }} scheduled
+
+        <ul>
+          <li v-for="student in slot.students" v-bind:key="student.shift_id">
+            {{ student.student_name }}
+            <input v-on:change="updateStudentShift(student)" type="checkbox" v-model="student.scheduled" />
+            Scheduled
+          </li>
+        </ul>
+      </table>
+    </div>
     <router-link to="/semesters">Back to all semesters</router-link>
   </div>
 </template>
@@ -20,6 +38,15 @@ export default {
       this.semester = response.data;
     });
   },
-  methods: {},
+  methods: {
+    updateStudentShift: function(student) {
+      console.log(student);
+    },
+    // axios.patch(`/api/shifts/${shift.id}`)
+    // .then(response => {
+    //   console.log("shifts update", response.data);
+    //   this.$router.push("/shifts");
+    // }),
+  },
 };
 </script>
