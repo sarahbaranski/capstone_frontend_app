@@ -9,6 +9,9 @@
       <div>
         <router-link v-bind:to="`/shifts`">Requested Shifts</router-link>
       </div>
+      <div>
+        <router-link v-bind:to="`/semesters/${semester.id}`">Requested Shifts in Semestershow</router-link>
+      </div>
     </div>
   </div>
 </template>

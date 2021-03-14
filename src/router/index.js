@@ -7,6 +7,7 @@ import Logout from "../views/Logout.vue";
 import SemestersIndex from "../views/SemestersIndex.vue";
 import ShiftsNew from "../views/ShiftsNew.vue";
 import ShiftsIndex from "../views/ShiftsIndex.vue";
+import SemestersShow from "../views/SemestersShow.vue";
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,7 @@ const routes = [
   { path: "/semesters", name: "semesters-index", component: SemestersIndex },
   { path: "/semesters/:id/shifts/new", name: "shifts-new", component: ShiftsNew },
   { path: "/shifts", name: "shifts-index", component: ShiftsIndex },
+  { path: "/semesters/:id", name: "semesters-show", component: SemestersShow },
 ];
 
 const router = new VueRouter({
