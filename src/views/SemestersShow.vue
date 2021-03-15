@@ -41,12 +41,11 @@ export default {
   methods: {
     updateStudentShift: function(student) {
       console.log(student);
+      axios.patch("/api/shifts/" + student.shift_id, { requested: student.requested }).then(response => {
+        console.log("shifts update", response);
+        this.$router.push("/shifts");
+      });
     },
-    // axios.patch(`/api/shifts/${shift.id}`)
-    // .then(response => {
-    //   console.log("shifts update", response.data);
-    //   this.$router.push("/shifts");
-    // }),
   },
 };
 </script>
