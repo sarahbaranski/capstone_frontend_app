@@ -8,16 +8,19 @@
             <th>{{ slot.day }} {{ slot.time }}</th>
           </h3>
         </tr>
-        {{ slot.students.length }} requested / {{ slot.total_required_staff }} required /
-        {{ slot.students.filter(s => s.scheduled).length }} scheduled
-
-        <ul>
-          <li v-for="student in slot.students" v-bind:key="student.shift_id">
-            {{ student.student_name }}
-            <input v-on:change="updateStudentShift(student)" type="checkbox" v-model="student.scheduled" />
-            Scheduled
-          </li>
-        </ul>
+        <tr>
+          {{ slot.students.length }} requested / {{ slot.total_required_staff }} required /
+          {{ slot.students.filter(s => s.scheduled).length }} scheduled
+        </tr>
+        <td>
+          <ul>
+            <li v-for="student in slot.students" v-bind:key="student.shift_id">
+              {{ student.student_name }}
+              <input v-on:change="updateStudentShift(student)" type="checkbox" v-model="student.scheduled" />
+              Scheduled
+            </li>
+          </ul>
+        </td>
       </table>
     </div>
     <router-link to="/semesters">Back to all semesters</router-link>
@@ -41,9 +44,8 @@ export default {
   methods: {
     updateStudentShift: function(student) {
       console.log(student);
-      axios.patch("/api/shifts/" + student.shift_id, { requested: student.requested }).then(response => {
+      axios.patch("/api/shifts/" + student.shift_id, { scheduled: student.scheduled }).then(response => {
         console.log("shifts update", response);
-        this.$router.push("/shifts");
       });
     },
   },
