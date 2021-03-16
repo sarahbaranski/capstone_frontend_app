@@ -3,11 +3,10 @@
     <!-- Banner -->
     <section id="banner">
       <div class="inner">
-        <div class="logo"><span class="icon fa-gem"></span></div>
-        <h2>This is Solid State</h2>
+        <div class="logo"><span class="far fa-calendar-alt"></span></div>
+        <h2>WAMI (when am I...)</h2>
         <p>
-          Another free + fully responsive site template by
-          <a href="http://html5up.net">HTML5 UP</a>
+          A scheduling app for on-campus jobs.
         </p>
       </div>
     </section>
