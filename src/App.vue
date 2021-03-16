@@ -69,9 +69,8 @@
         <ul class="links">
           <li><a href="/">Home</a></li>
           <li><a href="/semesters">Semesters</a></li>
-          <li><a href="elements.html">Elements</a></li>
-          <li><a href="#">Log In</a></li>
-          <li><a href="#">Sign Up</a></li>
+          <li><a href="/login">Log In</a></li>
+          <li><a href="/signup">Sign Up</a></li>
         </ul>
         <a href="#" class="close">Close</a>
       </div>

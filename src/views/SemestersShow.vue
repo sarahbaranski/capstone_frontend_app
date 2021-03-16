@@ -1,23 +1,28 @@
 <template>
   <div class="semesters-show">
     <h2>{{ semester.name }}</h2>
-    <div v-for="slot in semester.shift_by_times" v-bind:key="slot.day + slot.time">
+    <div v-for="shift in semester.shifts" v-bind:key="shift.id">
       <table>
         <tr>
           <h3>
-            <th>{{ slot.day }} {{ slot.time }}</th>
+            <th>{{ shift.day }} {{ shift.time }}</th>
           </h3>
         </tr>
         <tr>
-          {{ slot.students.length }} requested / {{ slot.total_required_staff }} required /
-          {{ slot.students.filter(s => s.scheduled).length }} scheduled
+          {{ shift.shift_requests.length }} requested / {{ shift.total_required_staff }} required /
+          {{ shift.shift_requests.filter(s => s.scheduled).length }} scheduled
         </tr>
         <td>
           <ul>
-            <li v-for="student in slot.students" v-bind:key="student.shift_id">
-              {{ student.student_name }}
-              <input v-on:change="updateStudentShift(student)" type="checkbox" v-model="student.scheduled" />
-              Scheduled
+            <li v-for="shift_request in shift.shift_requests" v-bind:key="shift_request.shift_id">
+              {{ shift_request.student_name }}
+              <input
+                v-on:change="updateStudentShift(shift_request)"
+                type="checkbox"
+                v-model="shift_request.scheduled"
+                v-bind:id="`checkbox${shift_request.id}`"
+              />
+              <label v-bind:for="`checkbox${shift_request.id}`">Scheduled</label>
             </li>
           </ul>
         </td>
@@ -42,9 +47,9 @@ export default {
     });
   },
   methods: {
-    updateStudentShift: function(student) {
-      console.log(student);
-      axios.patch("/api/shifts/" + student.shift_id, { scheduled: student.scheduled }).then(response => {
+    updateStudentShift: function(shift_request) {
+      console.log(shift_request);
+      axios.patch("/api/shift_requests/" + shift_request.id, { scheduled: shift_request.scheduled }).then(response => {
         console.log("shifts update", response);
       });
     },
