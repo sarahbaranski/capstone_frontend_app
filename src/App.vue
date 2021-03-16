@@ -69,6 +69,7 @@
         <ul class="links">
           <li><a href="/">Home</a></li>
           <li><a href="/semesters">Semesters</a></li>
+          <li><a href="/semesters/1/schedules">Schedules</a></li>
           <li><a href="/login">Log In</a></li>
           <li><a href="/signup">Sign Up</a></li>
         </ul>
