@@ -3,11 +3,11 @@
     <h2>{{ semester.name }}</h2>
     <h3>
       <p>
-        <strong>Semester Start Date:</strong>
+        Semester Start Date:
         {{ semester.start_date }}
       </p>
       <p>
-        <strong>Semester End Date:</strong>
+        Semester End Date:
         {{ semester.end_date }}
       </p>
     </h3>
