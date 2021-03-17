@@ -72,6 +72,7 @@ export default {
         .post("/api/shift_requests_all", params)
         .then(response => {
           console.log("shifts create", response);
+
           // this.$router.push("/shifts");
         })
         .catch(error => {
