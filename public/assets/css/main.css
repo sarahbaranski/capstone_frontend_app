@@ -388,7 +388,9 @@ h3.major,
 h4.major,
 h5.major,
 h6.major {
+  padding-top: 6em;
   padding-bottom: 1em;
+  padding-left: 2em;
   border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 }
 
@@ -2887,7 +2889,7 @@ ul.pagination li:last-child {
 }
 
 table {
-  margin: 0 0 2em 0;
+  margin: 0 4em 2em 2em;
   width: 100%;
 }
 

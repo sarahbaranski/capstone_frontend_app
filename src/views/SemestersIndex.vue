@@ -4,7 +4,7 @@
     <section id="wrapper">
       <section id="banner">
         <div class="inner">
-          <div class="logo"><span class="icon fa-gem"></span></div>
+          <!-- <div class="logo"><span class="icon fa-gem"></span></div> -->
           <h2>All Semesters</h2>
           <p></p>
         </div>
@@ -25,9 +25,11 @@
               Submit Availability
             </router-link>
             <router-link class="special" v-bind:to="`/semesters/${semester.id}/schedules`">View Schedule</router-link>
-            <router-link class="special" v-bind:to="`/semesters/${semester.id}`">
-              Schedule Requested Shifts
-            </router-link>
+            <div v-if="is_supervisor">
+              <router-link class="special" v-bind:to="`/semesters/${semester.id}`">
+                Schedule Requested Shifts
+              </router-link>
+            </div>
           </div>
         </div>
       </section>
@@ -49,6 +51,8 @@ export default {
     axios.get("/api/semesters").then(response => {
       console.log("semesters index", response);
       this.semesters = response.data.semesters;
+      this.is_student = response.data.is_student;
+      this.is_supervisor = response.data.is_supervisor;
     });
   },
   methods: {},
