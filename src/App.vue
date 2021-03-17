@@ -14,11 +14,9 @@
       <!-- Footer -->
       <section id="footer">
         <div class="inner">
-          <h2 class="major">Get in touch</h2>
+          <h2 class="major">Contact us</h2>
           <p>
-            Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat. Fusce
-            tincidunt, nisl eget mattis egestas, purus ipsum consequat orci, sit amet lobortis lorem lacus in tellus.
-            Sed ac elementum arcu. Quisque placerat auctor laoreet.
+            Please contact us for more information concerning your scheduling needs.
           </p>
           <form method="post" action="#">
             <div class="fields">
@@ -71,6 +69,7 @@
           <li><a href="/semesters">Semesters</a></li>
           <li><a href="/semesters/1/schedules">Schedules</a></li>
           <li><a href="/login">Log In</a></li>
+          <li><a href="/logout">Log Out</a></li>
           <li><a href="/signup">Sign Up</a></li>
         </ul>
         <a href="#" class="close">Close</a>

@@ -36,10 +36,7 @@
               <p>End Date: {{ semester.end_date }}</p>
               <router-link v-bind:to="`/semesters/${semester.id}/shifts/new`">Submit Availability</router-link>
               <div>
-                <router-link v-bind:to="`/shifts`">Requested Shifts</router-link>
-              </div>
-              <div>
-                <router-link v-bind:to="`/semesters/${semester.id}`">Requested Shifts in Semestershow</router-link>
+                <router-link v-bind:to="`/semesters/${semester.id}`">Requested Shifts</router-link>
               </div>
               <div>
                 <router-link v-bind:to="`/semesters/${semester.id}/schedules`">Schedule</router-link>

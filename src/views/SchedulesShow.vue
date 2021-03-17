@@ -1,14 +1,15 @@
 <template>
   <div class="schedules-show">
     <h2>{{ semester.name }}</h2>
-    <div>Semester Start Date: {{ semester.start_date }}</div>
-    <div>Semester End Date: {{ semester.end_date }}</div>
+    <div>Semester Start Date: {{ semester.start_date }} / Semester End Date: {{ semester.end_date }}</div>
+    <!-- <div v-if="shift.total_required_staff > 0"> -->
     <div v-for="shift in semester.shifts" v-bind:key="shift.id">
+      <h3 v-if="shift.shift_requests.filter(r => r.scheduled).length > 0">{{ shift.day }} {{ shift.time }}</h3>
       <div v-for="shift_request in shift.shift_requests" v-bind:key="shift_request.shift_id">
         <div v-if="shift_request.scheduled === true">
-          <h3>{{ shift.day }} {{ shift.time }}</h3>
           <p>{{ shift_request.student_name }}</p>
         </div>
+        <!-- </div> -->
       </div>
     </div>
     <router-link to="/semesters">Back to all semesters</router-link>
