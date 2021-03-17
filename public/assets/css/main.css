@@ -2890,7 +2890,7 @@ ul.pagination li:last-child {
 
 table {
   margin: 0 4em 2em 2em;
-  width: 100%;
+  width: 65%;
 }
 
 table tbody tr {
@@ -2905,6 +2905,7 @@ table tbody tr:nth-child(2n + 1) {
 
 table td {
   padding: 0.75em 0.75em;
+  text-align: center;
 }
 
 table th {
@@ -2912,7 +2913,7 @@ table th {
   font-size: 0.9em;
   font-weight: 600;
   padding: 0 0.75em 0.75em 0.75em;
-  text-align: left;
+  text-align: center;
 }
 
 table thead {

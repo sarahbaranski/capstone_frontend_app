@@ -2,7 +2,7 @@
   <div class="semesters-show">
     <section>
       <h3 class="major">Mark all available Shifts</h3>
-      <h4></h4>
+
       <div class="table-wrapper">
         <table>
           <thead>
