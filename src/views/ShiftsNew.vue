@@ -1,7 +1,7 @@
 <template>
   <div class="semesters-show">
     <section>
-      <h3 class="major">Mark all available Shifts</h3>
+      <h3 class="major">Mark all available Shifts for {{ semester.name }}</h3>
 
       <div class="table-wrapper">
         <table>
