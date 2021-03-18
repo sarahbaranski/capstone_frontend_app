@@ -1,25 +1,5 @@
 <template>
   <div class="schedules-show">
-    <h2>{{ semester.name }}</h2>
-    <h3>
-      <p>
-        Semester Start Date:
-        {{ semester.start_date }}
-      </p>
-      <p>
-        Semester End Date:
-        {{ semester.end_date }}
-      </p>
-    </h3>
-    <div v-for="shift in semester.shifts" v-bind:key="shift.id">
-      <h3 v-if="shift.shift_requests.filter(r => r.scheduled).length > 0">{{ shift.day }} {{ shift.time }}</h3>
-      <div v-for="shift_request in shift.shift_requests" v-bind:key="shift_request.shift_id">
-        <div v-if="shift_request.scheduled === true">
-          <p>{{ shift_request.student_name }}</p>
-        </div>
-      </div>
-    </div>
-    <router-link to="/semesters">Back to all semesters</router-link>
     <h2 class="major">{{ semester.name }} Schedule</h2>
     <h3>
       <p>
