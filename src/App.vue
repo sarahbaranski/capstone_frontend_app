@@ -64,9 +64,9 @@
           <li><a href="/">Home</a></li>
           <li><a href="/semesters">Semesters</a></li>
           <li><a href="/semesters/1/schedules">Schedules</a></li>
-          <li><a href="/login">Log In</a></li>
-          <li><a href="/logout">Log Out</a></li>
-          <li><a href="/signup">Sign Up</a></li>
+          <li><a v-if="!isLoggedIn()" href="/signup">Sign Up</a></li>
+          <li><a v-if="!isLoggedIn()" href="/login">Log In</a></li>
+          <li><a v-if="isLoggedIn()" href="/logout">Log Out</a></li>
         </ul>
         <a href="#" class="close">Close</a>
       </div>
@@ -75,3 +75,13 @@
 </template>
 
 <style></style>
+
+<script>
+export default {
+  methods: {
+    isLoggedIn: function() {
+      return localStorage.getItem("jwt");
+    },
+  },
+};
+</script>
