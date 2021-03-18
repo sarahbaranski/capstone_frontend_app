@@ -20,6 +20,47 @@
       </div>
     </div>
     <router-link to="/semesters">Back to all semesters</router-link>
+    <h2 class="major">{{ semester.name }} Schedule</h2>
+    <h3>
+      <p>
+        Semester Start Date:
+        {{ semester.start_date }}
+      </p>
+      <p>
+        Semester End Date:
+        {{ semester.end_date }}
+      </p>
+    </h3>
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Students</th>
+          </tr>
+        </thead>
+        <tbody v-for="shift in semester.shifts" v-bind:key="shift.id">
+          <tr v-if="shift.shift_requests.filter(r => r.scheduled).length > 0">
+            <td>{{ shift.day }}</td>
+            <td>{{ shift.time }}</td>
+            <td>
+              <div v-for="shift_request in shift.shift_requests" v-bind:key="shift_request.id">
+                <div v-if="shift_request.scheduled === true">
+                  {{ shift_request.student_name }}
+                </div>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2"></td>
+            <td><router-link to="/semesters">Back to all semesters</router-link></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
   </div>
 </template>
 
