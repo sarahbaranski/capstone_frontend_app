@@ -1,34 +1,47 @@
 <template>
   <div class="semesters-show">
-    <h2>{{ semester.name }}</h2>
-    <div v-for="shift in semester.shifts" v-bind:key="shift.id">
+    <h2 class="major">{{ semester.name }}</h2>
+    <div class="table-wrapper">
       <table>
-        <tr>
-          <h3>
-            <th>{{ shift.day }} {{ shift.time }}</th>
-          </h3>
-        </tr>
-        <tr>
-          {{ shift.shift_requests.length }} requested / {{ shift.total_required_staff }} required /
-          {{ shift.shift_requests.filter(s => s.scheduled).length }} scheduled
-        </tr>
-        <td>
-          <ul>
-            <li v-for="shift_request in shift.shift_requests" v-bind:key="shift_request.shift_id">
-              {{ shift_request.student_name }}
-              <input
-                v-on:change="updateStudentShift(shift_request)"
-                type="checkbox"
-                v-model="shift_request.scheduled"
-                v-bind:id="`checkbox${shift_request.id}`"
-              />
-              <label v-bind:for="`checkbox${shift_request.id}`">Scheduled</label>
-            </li>
-          </ul>
-        </td>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Time</th>
+            <th>Students / Scheduled</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="shift in semester.shifts" v-bind:key="shift.id">
+            <td>{{ shift.day }}</td>
+            <td>{{ shift.time }}</td>
+            <td>
+              <div v-for="shift_request in shift.shift_requests" v-bind:key="shift_request.shift_id">
+                {{ shift_request.student_name }}
+                <input
+                  v-on:change="updateStudentShift(shift_request)"
+                  type="checkbox"
+                  v-model="shift_request.scheduled"
+                  v-bind:id="`checkbox${shift_request.id}`"
+                />
+                <label v-bind:for="`checkbox${shift_request.id}`"></label>
+              </div>
+            </td>
+            <td></td>
+            <td>
+              {{ shift.total_required_staff }} required /
+              {{ shift.shift_requests.filter(s => s.scheduled).length }} scheduled
+            </td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4"></td>
+            <td><router-link to="/semesters">Back to all semesters</router-link></td>
+          </tr>
+        </tfoot>
       </table>
     </div>
-    <router-link to="/semesters">Back to all semesters</router-link>
   </div>
 </template>
 

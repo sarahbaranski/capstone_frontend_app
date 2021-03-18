@@ -2392,7 +2392,7 @@ input[type="radio"] + label:before {
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
-  line-height: 1;
+  line-height: 0.5;
   text-transform: none !important;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
@@ -2401,7 +2401,7 @@ input[type="radio"] + label:before {
 input[type="checkbox"] + label:before,
 input[type="radio"] + label:before {
   background: rgba(255, 255, 255, 0.025);
-  border-radius: 5px;
+  border-radius: px;
   border: solid 2px rgba(255, 255, 255, 0.125);
   content: "";
   display: inline-block;
@@ -2409,7 +2409,7 @@ input[type="radio"] + label:before {
   height: 2.0625em;
   left: 0;
   line-height: 2.0625em;
-  position: absolute;
+  position: center;
   text-align: center;
   top: 0;
   width: 2.0625em;
