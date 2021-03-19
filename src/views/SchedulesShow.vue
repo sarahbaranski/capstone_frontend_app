@@ -11,17 +11,23 @@
         {{ semester.end_date }}
       </p>
     </h3>
+    <select v-model="selectedStudent">
+      <option>All Students</option>
+      <option v-for="student in students" v-bind:key="student">{{ student }}</option>
+    </select>
     <div class="table-wrapper">
       <table>
         <thead>
           <tr>
             <th>Day</th>
             <th>Time</th>
-            <th>Students</th>
+            <th>
+              Students
+            </th>
           </tr>
         </thead>
         <tbody v-for="shift in semester.shifts" v-bind:key="shift.id">
-          <tr v-if="shift.shift_requests.filter(r => r.scheduled).length > 0">
+          <tr v-if="validShift(shift)">
             <td>{{ shift.day }}</td>
             <td>{{ shift.time }}</td>
             <td>
@@ -46,12 +52,14 @@
 
 <script>
 import axios from "axios";
+
 export default {
   data: function() {
     return {
       semester: {},
       shift: {},
       shift_request: [],
+      selectedStudent: "All Students",
     };
   },
   created: function() {
@@ -60,13 +68,30 @@ export default {
       this.semester = response.data;
     });
   },
-  // methods: {
-  //   updateStudentShift: function(shift_request) {
-  //     console.log(shift_request);
-  //     // axios.patch("/api/shift_requests/" + shift_request.id, { scheduled: shift_request.scheduled }).then(response => {
-  //     //   console.log("shifts update", response);
-  //     });
-  //   },
-  // },
+  computed: {
+    students: function() {
+      var result = [];
+      this.semester.shifts.forEach(shift => {
+        shift.shift_requests.forEach(shift_request => {
+          result.push(shift_request.student_name);
+        });
+      });
+      return [...new Set(result)];
+    },
+  },
+  methods: {
+    validShift: function(shift) {
+      var isScheduled = shift.shift_requests.filter(r => r.scheduled).length > 0;
+      var isStudent =
+        shift.shift_requests.filter(r => r.student_name === this.selectedStudent && r.scheduled).length > 0;
+      if (this.selectedStudent === "All Students") {
+        isStudent = true;
+      }
+      return isScheduled && isStudent;
+      //     // axios.patch("/api/shift_requests/" + shift_request.id, { scheduled: shift_request.scheduled }).then(response => {
+      //     //   console.log("shifts update", response);
+      //     });
+    },
+  },
 };
 </script>
