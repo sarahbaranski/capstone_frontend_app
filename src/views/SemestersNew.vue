@@ -8,9 +8,9 @@
       Name:
       <input type="text" v-model="newSemesterName" />
       Start Date:
-      <input type="text" v-model="newSemesterStartDate" />
+      <input type="date" v-model="newSemesterStartDate" />
       End Date:
-      <input type="text" v-model="newSemesterEndDate" />
+      <input type="date" v-model="newSemesterEndDate" />
       <input type="submit" value="Create" />
     </form>
   </div>
@@ -32,8 +32,8 @@ export default {
     createSemester: function() {
       var params = {
         name: this.newSemesterName,
-        width: this.newSemesterStartDate,
-        height: this.newSemesterEndDate,
+        start_date: this.newSemesterStartDate,
+        end_date: this.newSemesterEndDate,
       };
       axios
         .post("/api/semesters", params)
