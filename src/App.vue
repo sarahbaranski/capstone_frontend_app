@@ -63,7 +63,6 @@
         <ul class="links">
           <li><a href="/">Home</a></li>
           <li><a href="/semesters">Semesters</a></li>
-          <li><a href="/semesters/new">New Semester</a></li>
           <li><a v-if="!isLoggedIn()" href="/signup">Sign Up</a></li>
           <li><a v-if="!isLoggedIn()" href="/login">Log In</a></li>
           <li><a v-if="isLoggedIn()" href="/logout">Log Out</a></li>

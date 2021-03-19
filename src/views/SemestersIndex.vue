@@ -21,10 +21,17 @@
           <div class="content">
             <h2 class="major">{{ semester.name }}</h2>
             <p>Start Date: {{ semester.start_date }} End Date: {{ semester.end_date }}</p>
-            <router-link class="special" v-bind:to="`/semesters/${semester.id}/shifts/new`">
-              Submit Availability
-            </router-link>
+            <div v-if="is_student">
+              <router-link class="special" v-bind:to="`/semesters/${semester.id}/shifts/new`">
+                Submit Availability
+              </router-link>
+            </div>
             <router-link class="special" v-bind:to="`/semesters/${semester.id}/schedules`">View Schedule</router-link>
+            <div v-if="is_supervisor">
+              <router-link class="special" v-bind:to="`/semesters/new`">
+                Create New Semester/Shift
+              </router-link>
+            </div>
             <div v-if="is_supervisor">
               <router-link class="special" v-bind:to="`/semesters/${semester.id}`">
                 Schedule Requested Shifts
