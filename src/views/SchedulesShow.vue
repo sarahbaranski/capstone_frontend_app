@@ -88,9 +88,6 @@ export default {
         isStudent = true;
       }
       return isScheduled && isStudent;
-      //     // axios.patch("/api/shift_requests/" + shift_request.id, { scheduled: shift_request.scheduled }).then(response => {
-      //     //   console.log("shifts update", response);
-      //     });
     },
   },
 };

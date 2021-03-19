@@ -47,6 +47,13 @@ export default {
     axios.get("/api/semesters/" + this.$route.params.id).then(response => {
       console.log("semesters show", response);
       this.semester = response.data;
+      this.semester.shifts.forEach(shift => {
+        shift.shift_requests.forEach(shift_request => {
+          if (shift_request.requested && shift_request.is_owner) {
+            this.shiftIds.push(shift.id);
+          }
+        });
+      });
     });
   },
   methods: {
