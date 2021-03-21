@@ -27,7 +27,6 @@
                 <label v-bind:for="`checkbox${shift_request.id}`"></label>
               </div>
             </td>
-            <td></td>
             <td>
               {{ shift.total_required_staff }} required /
               {{ shift.shift_requests.filter(s => s.scheduled).length }} scheduled
