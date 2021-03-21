@@ -11,10 +11,7 @@
         {{ semester.end_date }}
       </p>
     </h3>
-    <select v-model="selectedStudent">
-      <option>All Students</option>
-      <option v-for="student in students" v-bind:key="student">{{ student }}</option>
-    </select>
+
     <div class="table-wrapper">
       <table>
         <thead>
@@ -22,7 +19,10 @@
             <th>Day</th>
             <th>Time</th>
             <th>
-              Students
+              <select v-model="selectedStudent">
+                <option>All Students</option>
+                <option v-for="student in students" v-bind:key="student">{{ student }}</option>
+              </select>
             </th>
           </tr>
         </thead>
