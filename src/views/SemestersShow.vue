@@ -27,10 +27,12 @@
                 <label v-bind:for="`checkbox${shift_request.id}`"></label>
               </div>
             </td>
-            <td>
-              {{ shift.total_required_staff }} required /
-              {{ shift.shift_requests.filter(s => s.scheduled).length }} scheduled
-            </td>
+            <div v-bind:class="{ danger: checkOverscheduled(shift) }">
+              <td>
+                {{ shift.total_required_staff }} required /
+                {{ shift.shift_requests.filter(s => s.scheduled).length }} scheduled
+              </td>
+            </div>
           </tr>
         </tbody>
         <tfoot>
@@ -50,6 +52,7 @@ export default {
   data: function() {
     return {
       semester: {},
+      student: {},
     };
   },
   created: function() {
@@ -64,6 +67,10 @@ export default {
       axios.patch("/api/shift_requests/" + shift_request.id, { scheduled: shift_request.scheduled }).then(response => {
         console.log("shifts update", response);
       });
+    },
+    checkOverscheduled: function(shift) {
+      console.log(shift);
+      return shift.total_required_staff < shift.shift_requests.filter(s => s.scheduled).length;
     },
   },
 };

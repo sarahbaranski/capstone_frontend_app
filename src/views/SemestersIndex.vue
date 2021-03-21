@@ -17,7 +17,7 @@
         v-bind:class="{ style1: index % 2 === 0, style2: index % 2 === 1, alt: index % 2 === 1 }"
       >
         <div class="inner">
-          <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+          <!-- <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a> -->
           <div class="content">
             <h2 class="major">{{ semester.name }}</h2>
             <p>Start Date: {{ semester.start_date }} End Date: {{ semester.end_date }}</p>

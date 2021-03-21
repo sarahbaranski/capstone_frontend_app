@@ -491,6 +491,10 @@ hr.major {
 
 /* Row */
 
+.danger {
+  background-color: red;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;

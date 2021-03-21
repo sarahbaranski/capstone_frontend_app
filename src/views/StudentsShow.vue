@@ -4,6 +4,7 @@
     <p>Email: {{ student.email }}</p>
     <p>Phone Number: {{ student.phone_number }}</p>
     <p>Requested Hours: {{ student.requested_hours }}</p>
+    <p>Work Study Amount: {{ student.work_study }}</p>
   </div>
 </template>
 
