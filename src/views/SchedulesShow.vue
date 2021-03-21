@@ -42,6 +42,7 @@
         <tfoot>
           <tr>
             <td colspan="2"></td>
+            <td>Notify all Students</td>
             <td><router-link to="/semesters">Back to all semesters</router-link></td>
           </tr>
         </tfoot>

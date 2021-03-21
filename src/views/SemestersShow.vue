@@ -37,7 +37,8 @@
         </tbody>
         <tfoot>
           <tr>
-            <td colspan="4"></td>
+            <td colspan="2"></td>
+            <td><button v-on:click="shiftNotify()">Notify all Students</button></td>
             <td><router-link to="/semesters">Back to all semesters</router-link></td>
           </tr>
         </tfoot>
@@ -71,6 +72,12 @@ export default {
     checkOverscheduled: function(shift) {
       console.log(shift);
       return shift.total_required_staff < shift.shift_requests.filter(s => s.scheduled).length;
+    },
+    shiftNotify: function() {
+      axios.get("/api/shift_requests/notify").then(response => {
+        console.log("shift_requests notify", response);
+        this.shifts = response.data;
+      });
     },
   },
 };
