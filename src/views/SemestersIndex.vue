@@ -26,7 +26,6 @@
                 Submit Availability
               </router-link>
             </div>
-            <router-link class="special" v-bind:to="`/semesters/${semester.id}/schedules`">View Schedule</router-link>
             <div v-if="is_supervisor">
               <router-link class="special" v-bind:to="`/semesters/new`">
                 Create New Semester/Shift
@@ -37,6 +36,7 @@
                 Schedule Requested Shifts
               </router-link>
             </div>
+            <router-link class="special" v-bind:to="`/semesters/${semester.id}/schedules`">View Schedule</router-link>
           </div>
         </div>
       </section>
