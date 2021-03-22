@@ -17,7 +17,9 @@
             <td>{{ shift.time }}</td>
             <td>
               <div v-for="shift_request in shift.shift_requests" v-bind:key="shift_request.shift_id">
-                {{ shift_request.student_name }}
+                <router-link :to="`/students/${shift_request.student_id}`">
+                  {{ shift_request.student_name }}
+                </router-link>
                 <input
                   v-on:change="updateStudentShift(shift_request)"
                   type="checkbox"
@@ -70,7 +72,6 @@ export default {
       });
     },
     checkOverscheduled: function(shift) {
-      console.log(shift);
       return shift.total_required_staff < shift.shift_requests.filter(s => s.scheduled).length;
     },
     shiftNotify: function() {
