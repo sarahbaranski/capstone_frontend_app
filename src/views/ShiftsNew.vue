@@ -25,7 +25,9 @@
           <tfoot>
             <tr>
               <td colspan="2"></td>
-              <td><input type="submit" value="Create" /></td>
+              <td>
+                <input type="submit" value="Save" />
+              </td>
             </tr>
           </tfoot>
         </table>

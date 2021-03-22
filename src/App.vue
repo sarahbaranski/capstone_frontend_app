@@ -62,6 +62,7 @@
         <h2>Menu</h2>
         <ul class="links">
           <li><a href="/">Home</a></li>
+          <li><a href="/dashboard">Dashboard</a></li>
           <li><a href="/semesters">Semesters</a></li>
           <li><a v-if="!isLoggedIn()" href="/signup">Sign Up</a></li>
           <li><a v-if="!isLoggedIn()" href="/login">Log In</a></li>

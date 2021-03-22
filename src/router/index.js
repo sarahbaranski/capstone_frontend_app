@@ -11,6 +11,7 @@ import SemestersShow from "../views/SemestersShow.vue";
 import SchedulesShow from "../views/SchedulesShow.vue";
 import SemestersNew from "../views/SemestersNew.vue";
 import StudentsShow from "../views/StudentsShow.vue";
+import SchedulesIndex from "../views/SchedulesIndex.vue";
 
 Vue.use(VueRouter);
 
@@ -38,6 +39,7 @@ const routes = [
   { path: "/semesters/:id", name: "semesters-show", component: SemestersShow },
   { path: "/semesters/:id/schedules", name: "shedules-show", component: SchedulesShow },
   { path: "/students/:id", name: "students-show", component: StudentsShow },
+  { path: "/dashboard", name: "schedules-index", component: SchedulesIndex },
 ];
 
 const router = new VueRouter({
