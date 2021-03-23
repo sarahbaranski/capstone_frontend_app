@@ -32,7 +32,7 @@
 
       <section id="four" class="wrapper alt style1">
         <div class="inner">
-          <h1>Semester Scheduling At A Glance</h1>
+          <h1 id="graph-heading">Semester Scheduling At A Glance</h1>
           <section class="features">
             <article class="box">
               <h3 class="major">
@@ -75,7 +75,30 @@
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.box {
+  margin-left: 0em;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.major {
+  margin-bottom: 2.5em;
+}
+
+#graph-heading {
+  font-size: 22px;
+}
+select {
+  width: 350px;
+  margin-right: 1.5em;
+}
+</style>
 
 <script>
 import Vue from "vue";
