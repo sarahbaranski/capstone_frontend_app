@@ -35,12 +35,14 @@
               <strong>Work Study Amount:</strong>
               {{ student.work_study }}
             </p>
+          </article>
+          <article class="box">
+            <h3 class="major">Semester Information</h3>
             <div v-for="x in student.hours_each_semester" v-bind:key="x[0]">
               <p v-bind:class="{ dangertext: checkOverscheduled(x[1]) }">
                 {{ x[0] }} : {{ x[1] }} hours ({{ semesterEarnings(x[1]) }} dollars earned )
               </p>
             </div>
-            <!-- <a href="#" class="special">Learn more</a> -->
           </article>
         </section>
         <ul class="actions">
@@ -54,6 +56,15 @@
 <style scoped>
 .dangertext {
   color: red;
+}
+
+.box {
+  padding-bottom: 2em;
+  position: center;
+}
+
+.major {
+  text-align: center;
 }
 </style>
 <script>
