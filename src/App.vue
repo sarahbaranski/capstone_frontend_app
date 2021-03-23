@@ -39,20 +39,20 @@
           </form>
           <ul class="contact">
             <li class="icon solid fa-home">
-              Kevco Inc
+              WAMI
               <br />
               1234 Somewhere Road Suite #2894
               <br />
               Chicago, IL 00000-0000
             </li>
-            <li class="icon solid fa-phone">(866) 555-0000</li>
-            <li class="icon solid fa-envelope"><a href="#">wami@kevco.org</a></li>
+            <li class="icon solid fa-phone">(312) 555-0000</li>
+            <li class="icon solid fa-envelope"><a href="#">sbaranski@gmail.com</a></li>
             <!-- <li class="icon brands fa-twitter"><a href="#">twitter.com/untitled-tld</a></li>
             <li class="icon brands fa-facebook-f"><a href="#">facebook.com/untitled-tld</a></li>
             <li class="icon brands fa-instagram"><a href="#">instagram.com/untitled-tld</a></li> -->
           </ul>
           <ul class="copyright">
-            <li>&copy; Kevco Inc. All rights reserved.</li>
+            <li>&copy; Sarah Baranski All rights reserved.</li>
           </ul>
         </div>
       </section>
