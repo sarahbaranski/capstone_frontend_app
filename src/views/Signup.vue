@@ -36,6 +36,15 @@
 .form-group {
   margin: 1.5em;
 }
+
+.text-danger {
+  color: red;
+}
+
+.btn-primary {
+  margin-top: 2em;
+  margin-left: 2em;
+}
 </style>
 
 <script>
