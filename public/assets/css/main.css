@@ -388,7 +388,7 @@ h3.major,
 h4.major,
 h5.major,
 h6.major {
-  padding-top: 6em;
+  padding-top: 1em;
   padding-bottom: 1em;
   padding-left: 2em;
   border-bottom: solid 2px rgba(255, 255, 255, 0.125);
@@ -490,10 +490,6 @@ hr.major {
 }
 
 /* Row */
-
-.danger {
-  background-color: red;
-}
 
 .row {
   display: flex;
@@ -2303,9 +2299,9 @@ textarea {
   color: inherit;
   display: block;
   outline: 0;
-  padding: 0 1em;
+  padding: 0 3em;
   text-decoration: none;
-  width: 50%;
+  width: 75%;
 }
 
 input[type="text"]:invalid,
@@ -4157,7 +4153,7 @@ body.is-preload #banner p {
     background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
     background-size: auto, cover;
     background-position: center, center;
-    margin-top: -6.5em;
+    margin-top: -4.5em;
     padding-top: 6.5em;
   }
 }

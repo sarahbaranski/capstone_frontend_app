@@ -49,6 +49,12 @@
   </div>
 </template>
 
+<style scoped>
+.danger {
+  background-color: red;
+}
+</style>
+
 <script>
 import axios from "axios";
 export default {

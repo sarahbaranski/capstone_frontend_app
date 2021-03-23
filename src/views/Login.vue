@@ -15,10 +15,24 @@
         <label>Password:</label>
         <input type="password" class="form-control" v-model="password" />
       </div>
+      <br />
       <input type="submit" class="btn btn-primary" value="Submit" />
     </form>
   </div>
 </template>
+
+<style scoped>
+.form-group {
+  margin: 1.5em;
+}
+.form-control {
+  padding: 0 1em;
+}
+.btn-primary {
+  margin-top: -4em;
+  margin-left: 2em;
+}
+</style>
 
 <script>
 import axios from "axios";

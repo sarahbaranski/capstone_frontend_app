@@ -32,6 +32,11 @@
     </form>
   </div>
 </template>
+<style scoped>
+.form-group {
+  margin: 1.5em;
+}
+</style>
 
 <script>
 import axios from "axios";
