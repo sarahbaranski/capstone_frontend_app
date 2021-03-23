@@ -44,6 +44,18 @@
   </div>
 </template>
 
+<style scoped>
+.inner {
+  margin-top: 0em;
+  padding-top: 0em;
+  margin-bottom: 0em;
+}
+
+.wrapper {
+  margin-top: 1em;
+}
+</style>
+
 <script>
 import axios from "axios";
 export default {
