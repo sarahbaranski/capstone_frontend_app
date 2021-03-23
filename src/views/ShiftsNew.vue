@@ -25,9 +25,7 @@
           <tfoot>
             <tr>
               <td colspan="2"></td>
-              <td>
-                <input type="submit" value="Save" />
-              </td>
+              <td><input v-on:click="createShift()" type="submit" value="Create" /></td>
             </tr>
           </tfoot>
         </table>
