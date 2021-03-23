@@ -1,8 +1,8 @@
 <template>
   <div class="schedules-index">
-    <h1>Semester Scheduling At A Glance</h1>
+    <!-- <h1>Dashboard</h1> -->
     <div>
-      <p>
+      <!-- <p>
         <select v-on:change="updateGraph()" v-model="selectedSemester">
           <option>Choose a Semester</option>
           <option v-for="semester in semesters" v-bind:key="semester.id" v-bind:value="semester">
@@ -28,10 +28,54 @@
           <legends :names="names"></legends>
           <tooltip :names="names"></tooltip>
         </graph-pie>
-      </div>
+      </div> -->
+
+      <section id="four" class="wrapper alt style1">
+        <div class="inner">
+          <h1>Semester Scheduling At A Glance</h1>
+          <section class="features">
+            <article class="box">
+              <h3 class="major">
+                <p>
+                  <select v-on:change="updateGraph()" v-model="selectedSemester">
+                    <option>Choose a Semester</option>
+                    <option v-for="semester in semesters" v-bind:key="semester.id" v-bind:value="semester">
+                      {{ semester.name }}
+                    </option>
+                  </select>
+                </p>
+              </h3>
+              <div>
+                <graph-pie
+                  :width="400"
+                  :height="500"
+                  :padding-top="100"
+                  :padding-bottom="100"
+                  :padding-left="100"
+                  :padding-right="100"
+                  :values="values"
+                  :names="names"
+                  :active-index="[0, 2]"
+                  :active-event="'click'"
+                  :show-text-type="'outside'"
+                  :data-format="dataFormat"
+                >
+                  <legends :names="names"></legends>
+                  <tooltip :names="names"></tooltip>
+                </graph-pie>
+              </div>
+            </article>
+          </section>
+          <!-- <ul class="actions">
+            <li><a href="#" class="button">Browse All</a></li>
+          </ul> -->
+        </div>
+      </section>
     </div>
   </div>
 </template>
+
+<style scoped></style>
 
 <script>
 import Vue from "vue";
