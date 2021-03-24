@@ -2,12 +2,12 @@
   <div class="schedules-show">
     <h2 class="major">{{ semester.name }} Schedule</h2>
     <h3>
-      <p>
-        Semester Start Date:
+      <p id="dates">
+        Start Date:
         {{ semester.start_date }}
       </p>
-      <p>
-        Semester End Date:
+      <p id="dates">
+        End Date:
         {{ semester.end_date }}
       </p>
     </h3>
@@ -18,7 +18,7 @@
           <tr>
             <th>Day</th>
             <th>Time</th>
-            <th>
+            <th id="drop-down">
               <select v-model="selectedStudent">
                 <option>All Students</option>
                 <option v-for="student in students" v-bind:key="student">{{ student }}</option>
@@ -50,6 +50,16 @@
     </div>
   </div>
 </template>
+
+<style scoped>
+#dates {
+  margin: 2em;
+}
+#drop-down {
+  width: 45%;
+  padding-left: 6em;
+}
+</style>
 
 <script>
 import axios from "axios";
