@@ -15,7 +15,7 @@
           <tr v-for="shift in semester.shifts" v-bind:key="shift.id">
             <td>{{ shift.day }}</td>
             <td>{{ shift.time }}</td>
-            <td>
+            <td class="checks">
               <div v-for="shift_request in shift.shift_requests" v-bind:key="shift_request.shift_id">
                 <router-link :to="`/students/${shift_request.student_id}`">
                   {{ shift_request.student_name }}
@@ -52,6 +52,11 @@
 <style scoped>
 .danger {
   background-color: red;
+}
+
+.checks {
+  text-align: right;
+  padding-right: 5em;
 }
 </style>
 
